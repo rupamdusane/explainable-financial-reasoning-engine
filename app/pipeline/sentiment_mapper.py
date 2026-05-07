@@ -5,10 +5,12 @@ def map_sentiment(concepts):
     
     for c in concepts:
         polarity = CONCEPT_POLARITY.get(c, 0.0)
+        is_known = c in CONCEPT_POLARITY
         
         results.append({
             "term": c,
-            "polarity": polarity
+            "polarity": polarity,
+            "known_concept": is_known,
         })
         
     return results

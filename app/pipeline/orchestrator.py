@@ -9,14 +9,29 @@ def analyze_text(text: str):
     # Step 2: Map concepts to sentiment
     sentiment_data = map_sentiment(concepts)
     
+    known_concepts = [c for c in sentiment_data if c["known_concept"]]
+    
     # Step 3: Calculate overall sentiment
-    if sentiment_data:
-        overall = sum([c['polarity'] for c in sentiment_data]) / len(sentiment_data)
+    if known_concepts:
+        overall = sum([c['polarity'] for c in known_concepts]) / len(known_concepts)
     else:
         overall = 0.0
+        
+    if overall > 0.2:
+        sentiment_label = "positive"
+        market_signal = "bullish"
+    elif overall < -0.2:
+        sentiment_label = "negative"
+        market_signal = "bearish"
+    else:
+        sentiment_label = "mixed"
+        market_signal = "uncertain"
            
     return {
         "original_text": text,
         "concepts": sentiment_data,
-        "overall_sentiment": overall,
+        "overall_sentiment": round(overall, 3),
+        "sentiment_label": sentiment_label,
+        "market_signal": market_signal
     }
+    

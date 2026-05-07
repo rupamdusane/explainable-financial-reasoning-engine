@@ -8,8 +8,12 @@ if __name__ == "__main__":
     print("\nINPUT:")
     print(text)
     
-    print("\nOUTPUT:")
+    print("\nCONCEPT ANALYSIS:")
     for c in result["concepts"]:
-        print(f"{c['term']}: {c['polarity']}")
-        
-    print("\nOverall Sentiment:", result["overall_sentiment"])
+        status = "known" if c["known_concept"] else "unknown"
+        print(f"{c['term']}: {c['polarity']} ({status})")
+
+    print("\nOVERALL:")
+    print("Sentiment Score:", result["overall_sentiment"])
+    print("Sentiment Label:", result["sentiment_label"])
+    print("Market Signal:", result["market_signal"])
