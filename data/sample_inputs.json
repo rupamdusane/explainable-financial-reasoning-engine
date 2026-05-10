@@ -1,0 +1,22 @@
+[
+  {
+    "id": "example_1_mixed_bearish",
+    "text": "The company reported strong profit growth but faces inflation risk and potential layoffs, raising concerns about investor confidence."
+  },
+  {
+    "id": "example_2_bullish",
+    "text": "The company reported revenue growth, strong earnings, and rising investor confidence after expanding into new markets."
+  },
+  {
+    "id": "example_3_bearish",
+    "text": "The firm reported earnings decline, rising debt, layoffs, and regulatory pressure amid market uncertainty."
+  },
+  {
+    "id": "example_4_mixed_uncertain",
+    "text": "The company announced an acquisition and revenue growth, but market volatility and interest rate hikes created investor concern."
+  },
+  {
+    "id": "example_5_macro_pressure",
+    "text": "Investors reacted cautiously as inflation risk, interest rate hikes, and economic slowdown created pressure on market confidence."
+  }
+]

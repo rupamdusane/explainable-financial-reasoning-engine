@@ -6,12 +6,17 @@ CONCEPT_POLARITY = {
     "expansion": 0.6,
     "acquisition": 0.5,
     "confidence": 0.5,
-    "investor confidence": 0.5,
+    "investor confidence": 0.7,
     "demand": 0.4,
     "investment": 0.5,
     "profit growth": 0.9,
     "revenue growth": 0.8,
     "earnings growth": 0.8,
+    "strong earnings": 0.8,
+    "earnings": 0.6,
+    "new market": 0.4,
+    "new markets": 0.4,
+    "market confidence": 0.6,
     
 
     # Negative financial/business signals
@@ -33,4 +38,8 @@ CONCEPT_POLARITY = {
     "slowdown": -0.6,
     "concern": -0.4,
     "concerns": -0.4,
+    "market concern": -0.5,
+    "market uncertainty": -0.7,
+    "market volatility": -0.7,
+    "economic slowdown": -0.8,
 }

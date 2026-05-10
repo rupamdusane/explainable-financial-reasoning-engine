@@ -51,14 +51,21 @@ def generate_summary(sentiment_label, market_signal, concepts, interactions):
         return summary
 
     summary = (
-        "The text shows mixed sentiment, with positive business signals being balanced "
-        "by negative risk-related or macroeconomic concepts."
+        f"The text shows mixed sentiment. Positive signals such as "
+        f"{', '.join(positive[:3]) if positive else 'none'} are balanced against "
+        f"negative signals such as {', '.join(negative[:3]) if negative else 'none'}."
     )
 
-    if mixed_interactions:
+    useful_interactions = (
+        positive_interactions[:1]
+        + negative_interactions[:1]
+        + mixed_interactions[:1]
+    )
+
+    if useful_interactions:
         summary += (
-            " This mixed interpretation is supported by interactions such as "
-            f"{'; '.join(mixed_interactions[:2])}."
+            " The reasoning layer highlights this tension through interactions such as "
+            f"{'; '.join(useful_interactions)}."
         )
 
     return summary

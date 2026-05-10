@@ -53,4 +53,22 @@ INTERACTION_RULES = [
         "impact": "negative",
         "weight": -0.25,
     },
+    {
+        "required_concepts": ["acquisition", "revenue growth"],
+        "effect": "corporate expansion and revenue growth support positive business momentum",
+        "impact": "positive",
+        "weight": 0.2,
+    },
+    {
+        "required_concepts": ["inflation risk", "interest rate hike"],
+        "effect": "inflation risk and interest rate pressure may tighten financial conditions",
+        "impact": "negative",
+        "weight": -0.25,
+    },
+    {
+        "required_concepts": ["economic slowdown", "interest rate hike"],
+        "effect": "economic slowdown under higher interest rates may weaken market confidence",
+        "impact": "negative",
+        "weight": -0.25,
+    },
 ]

@@ -12,6 +12,11 @@ CONCEPT_CATEGORIES = {
     "earnings decline": "company_performance",
     "revenue decline": "company_performance",
     "profit decline": "company_performance",
+    "strong profit growth": "company_performance",
+    "strong earnings": "company_performance",
+    
+    # Company Financial Signals
+    "debt": "company_financial_risk",
 
     # Macroeconomic pressure
     "inflation": "macroeconomic",
@@ -36,6 +41,10 @@ CONCEPT_CATEGORIES = {
     "merger": "corporate_action",
     "expansion": "corporate_action",
     "investment": "corporate_action",
+    
+    # New market entry
+    "new market": "business_expansion",
+    "new markets": "business_expansion",
 
     # Market psychology
     "confidence": "market_psychology",
@@ -44,6 +53,8 @@ CONCEPT_CATEGORIES = {
     "investor confidence": "market_psychology",
     "concern": "market_psychology",
     "concerns": "market_psychology",
+    "market concern": "market_psychology",
+    "market confidence": "market_psychology",
     
     # Policy / regulation
     "regulatory pressure": "policy_risk",

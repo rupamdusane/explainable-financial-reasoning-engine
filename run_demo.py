@@ -1,9 +1,10 @@
+import json
 from app.pipeline.orchestrator import analyze_text
 
-if __name__ == "__main__":
-    text = "The company reported strong profit growth but faces inflation risk and potential layoffs, raising concerns about investor confidence."
-    
-    result = analyze_text(text)
+def print_result(example_id, result):
+    print("\n" + "=" * 80)
+    print(f"Example ID: {example_id}")
+    print("=" * 80)
     
     print("\nINPUT:")
     print(result["original_text"])
@@ -42,3 +43,11 @@ if __name__ == "__main__":
     
     print("\nSUMMARY:")
     print(result["summary"])
+    
+if __name__ == "__main__":
+    with open("data/sample_inputs.json", "r", encoding="utf-8") as file:
+        examples = json.load(file)
+        
+    for example in examples:
+        result = analyze_text(example["text"])
+        print_result(example["id"], result)
