@@ -4,19 +4,23 @@ from app.pipeline.concept_classifier import classify_concepts
 from app.pipeline.interaction_engine import detect_interactions
 from app.pipeline.reasoning_engine import build_reasoning
 from app.pipeline.summary_generator import generate_summary
+from app.pipeline.concept_normalizer import normalize_concepts
 
 
 def analyze_text(text: str):
-    # Step 1: Extract concepts
-    concepts = extract_concepts(text)
+    # Step 1: Extract raw concepts
+    raw_concepts = extract_concepts(text)
     
-    # Step 2: Map concepts to sentiment
+    # Step 2: Normalize concepts
+    concepts = normalize_concepts(raw_concepts)
+    
+    # Step 3: Map polarity to concepts
     sentiment_data = map_sentiment(concepts)
     
-    # Step 3: Add concept categories
+    # Step 4: Add concept categories
     classified_concepts = classify_concepts(sentiment_data)
     
-    # Step 4: Use only known concepts for base score
+    # Step 5: Use only known concepts for base score
     known_concepts = [c for c in classified_concepts if c["known_concept"]]
     
     if known_concepts:
@@ -24,15 +28,15 @@ def analyze_text(text: str):
     else:
         base_score = 0.0
         
-    # Step 5: Detect interactions between concepts
+    # Step 6: Detect interactions between concepts
     interactions = detect_interactions(classified_concepts)
     
-    # Step 6: Add interaction effect
+    # Step 7: Add interaction effect
     interaction_score = sum(item["weight"] for item in interactions)
     
     final_score = base_score + interaction_score
 
-    # Step 7: Decide final label
+    # Step 8: Decide final label
     if final_score > 0.2:
         sentiment_label = "positive"
         market_signal = "bullish"
@@ -43,10 +47,10 @@ def analyze_text(text: str):
         sentiment_label = "mixed"
         market_signal = "uncertain"
         
-    # Step 8: Build reasoning path
+    # Step 9: Build reasoning path
     reasoning_path = build_reasoning(classified_concepts, interactions)
     
-    # Step 9: Generate summary
+    # Step 10: Generate summary
     summary = generate_summary(
         sentiment_label,
         market_signal,
@@ -56,6 +60,8 @@ def analyze_text(text: str):
     
     return {
         "original_text": text,
+        "raw_concepts": raw_concepts,
+        "normalized_concepts": concepts,
         "concepts": classified_concepts,
         "base_sentiment_score": round(base_score, 3),
         "interaction_score": round(interaction_score, 3),

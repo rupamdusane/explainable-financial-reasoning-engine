@@ -6,14 +6,25 @@ CONCEPT_CATEGORIES = {
     "loss": "company_performance",
     "growth": "company_performance",
     "decline": "company_performance",
+    "profit growth": "company_performance",
+    "revenue growth": "company_performance",
+    "earnings growth": "company_performance",
+    "earnings decline": "company_performance",
+    "revenue decline": "company_performance",
+    "profit decline": "company_performance",
 
     # Macroeconomic pressure
     "inflation": "macroeconomic",
+    "inflation risk": "macroeconomic",
     "interest": "macroeconomic",
+    "interest rate hike": "macroeconomic",
     "rate": "macroeconomic",
     "risk": "macroeconomic",
     "uncertainty": "macroeconomic",
     "slowdown": "macroeconomic",
+    "economic slowdown": "macroeconomic",
+    "market volatility": "macroeconomic",
+    "market uncertainty": "macroeconomic",
 
     # Employment / internal business signals
     "layoff": "employment_risk",
@@ -30,4 +41,10 @@ CONCEPT_CATEGORIES = {
     "confidence": "market_psychology",
     "demand": "market_psychology",
     "pressure": "market_psychology",
+    "investor confidence": "market_psychology",
+    
+    # Policy / regulation
+    "regulatory pressure": "policy_risk",
+    
+    
 }

@@ -6,10 +6,22 @@ INTERACTION_RULES = [
         "weight": -0.2,
     },
     {
+        "required_concepts": ["inflation risk"],
+        "effect": "inflation-related uncertainty may pressure market expectations",
+        "impact": "negative",
+        "weight": -0.15,
+    },
+    {
         "required_concepts": ["profit", "growth"],
         "effect": "strong company performance supports positive investor sentiment",
         "impact": "positive",
         "weight": 0.2,
+    },
+    {
+        "required_concepts": ["profit growth"],
+        "effect": "profit growth indicates improving company performance",
+        "impact": "positive",
+        "weight": 0.15,
     },
     {
         "required_concepts": ["layoff", "risk"],
@@ -22,5 +34,23 @@ INTERACTION_RULES = [
         "effect": "business growth is being balanced by macroeconomic pressure",
         "impact": "mixed",
         "weight": 0.0,
+    },
+    {
+        "required_concepts": ["profit growth", "inflation risk"],
+        "effect": "positive company performance is being challenged by inflation-related risk",
+        "impact": "mixed",
+        "weight": -0.05,
+    },
+    {
+        "required_concepts": ["interest rate hike", "market volatility"],
+        "effect": "tightening monetary conditions may amplify market volatility",
+        "impact": "negative",
+        "weight": -0.25,
+    },
+    {
+        "required_concepts": ["earnings decline", "layoff"],
+        "effect": "weak earnings and workforce reduction indicate structural company weakness",
+        "impact": "negative",
+        "weight": -0.25,
     },
 ]
