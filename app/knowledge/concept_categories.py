@@ -42,6 +42,8 @@ CONCEPT_CATEGORIES = {
     "demand": "market_psychology",
     "pressure": "market_psychology",
     "investor confidence": "market_psychology",
+    "concern": "market_psychology",
+    "concerns": "market_psychology",
     
     # Policy / regulation
     "regulatory pressure": "policy_risk",

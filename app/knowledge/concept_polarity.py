@@ -31,4 +31,6 @@ CONCEPT_POLARITY = {
     "pressure": -0.4,
     "regulatory pressure": -0.7,
     "slowdown": -0.6,
+    "concern": -0.4,
+    "concerns": -0.4,
 }

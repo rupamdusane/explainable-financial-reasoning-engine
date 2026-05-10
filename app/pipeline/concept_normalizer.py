@@ -32,6 +32,21 @@ NORMALIZATION_RULES = {
     "regulation pressure": "regulatory pressure",
 }
 
+def remove_subconcepts(concepts):
+    concept_set = set(concepts)
+    final_concepts = set(concepts)
+    
+    multi_word_concepts = [c for c in concept_set if len(c.split()) > 1]
+    
+    for multi in multi_word_concepts:
+        parts = multi.split()
+        
+        for part in parts:
+            if part in final_concepts:
+                final_concepts.remove(part)
+                
+    return list(final_concepts)
+
 
 def normalize_concepts(concepts):
     normalized = set()
@@ -44,4 +59,4 @@ def normalize_concepts(concepts):
         else:
             normalized.add(clean)
 
-    return list(normalized)
+    return remove_subconcepts(normalized)
