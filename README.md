@@ -293,7 +293,7 @@ explainable-financial-reasoning-engine/
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone <https://github.com/rupamdusane/explainable-financial-reasoning-engine.git>
 cd explainable-financial-reasoning-engine
 ```
 
