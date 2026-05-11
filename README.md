@@ -408,3 +408,10 @@ Next step:
 - API layer
 - UI layer
 - Evaluation and model integration
+
+## Copyright
+
+© 2026 Rupam Dusane. All rights reserved.
+
+This project is shared for educational, portfolio, and research demonstration purposes.  
+Please do not copy, redistribute, or reuse substantial parts of this project without permission.
