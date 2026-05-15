@@ -16,3 +16,5 @@ class AnalysisResult(BaseModel):
     overall_sentiment: float
     explanation: str
     
+class TextAnalysisRequest(BaseModel):
+    text: str
